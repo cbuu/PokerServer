@@ -1,30 +1,38 @@
 package core;
 
 import com.alibaba.fastjson.JSON;
+import logic.Router;
+import message.BaseMessage;
+import message.CreateRoomMessage;
+import message.DataPack;
 import model.Poker;
 import net.PokerServer;
+import utils.Log;
 
 /**
  * Created by iori on 2017/3/16.
  */
 public class Boot {
     public static void main(String[] args) throws Exception {
-        PokerServer server = new PokerServer();
-        server.start();
-//        test();
+//        PokerServer server = new PokerServer();
+//        server.start();
+        test();
     }
 
     public static void test(){
-        Poker poker = new Poker();
-        poker.setPoint(2);
-        poker.setSuit(3);
+        Router router = new Router();
+        String a = "{\"baseMessage\":\"{\\\"from\\\":\\\"iori\\\",\\\"password\\\":\\\"wocao\\\",\\\"roomId\\\":\\\"123\\\"}\",\"seq\":1,\"type\":1}";
+        router.route(null,a);
+        CreateRoomMessage message = new CreateRoomMessage();
+        message.setRoomId("123");
+        message.setPassword("wocao");
+        message.setFrom("iori");
 
-        String json = JSON.toJSONString(poker);
+        DataPack dataPack = new DataPack();
+        dataPack.setType(1);
+        dataPack.setSeq(1);
+        dataPack.setBaseMessage(JSON.toJSONString(message));
 
-        System.out.println(json);
-
-        String a = "{'point':2,'suit':5}";
-        Poker p = JSON.parseObject(a,Poker.class);
-        System.out.println("" + p.getPoint() + " " + p.getSuit());
+        Log.d(JSON.toJSONString(dataPack));
     }
 }

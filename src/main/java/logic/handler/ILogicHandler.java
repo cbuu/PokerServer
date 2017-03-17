@@ -8,5 +8,6 @@ import message.BaseMessage;
  */
 public interface ILogicHandler<T extends BaseMessage> {
 
-    void run(ChannelHandlerContext ctxs,T msg);
+    void run(ChannelHandlerContext ctx,String msg);
+    T parseMessage(String msg);
 }

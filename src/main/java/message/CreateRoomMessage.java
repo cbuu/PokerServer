@@ -24,7 +24,7 @@ public class CreateRoomMessage extends BaseMessage {
     private String roomId;
     private String password;
 
-    public CreateRoomMessage(int seq) {
-        super(seq);
+    public CreateRoomMessage() {
+        super();
     }
 }
