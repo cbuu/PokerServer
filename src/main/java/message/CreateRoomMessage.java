@@ -21,8 +21,17 @@ public class CreateRoomMessage extends BaseMessage {
         this.password = password;
     }
 
+    public int getAnte() {
+        return ante;
+    }
+
+    public void setAnte(int ante) {
+        this.ante = ante;
+    }
+
     private String roomId;
     private String password;
+    private int ante;
 
     public CreateRoomMessage() {
         super();

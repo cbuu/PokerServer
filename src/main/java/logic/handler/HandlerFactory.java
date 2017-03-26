@@ -12,6 +12,7 @@ public class HandlerFactory {
 
     interface EMessage{
         int TYPE_CREATE_ROOM = 1;
+        int TYPE_ENTER_ROOM = 2;
     }
 
     public static ILogicHandler createHandler(ChannelHandlerContext ctx, DataPack dataPack){

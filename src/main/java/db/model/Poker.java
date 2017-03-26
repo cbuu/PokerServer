@@ -1,4 +1,4 @@
-package model;
+package db.model;
 
 /**
  * Created by iori on 2017/3/17.
