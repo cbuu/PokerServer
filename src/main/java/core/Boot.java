@@ -2,6 +2,7 @@ package core;
 
 import db.DBCore;
 import logic.Router;
+import logic.game.GameManager;
 
 /**
  * Created by iori on 2017/3/16.
@@ -9,6 +10,7 @@ import logic.Router;
 public class Boot {
     public static void main(String[] args) throws Exception {
         DBCore.getInstance().init();
+        GameManager.getInstance().init();
 //        PokerServer server = new PokerServer();
 //        server.start();
 
