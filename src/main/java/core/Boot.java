@@ -13,15 +13,13 @@ public class Boot {
 //        GameManager.getInstance().init();
 //        PokerServer server = new PokerServer();
 //        server.start();
-        Class c = Class.forName("logic.message.DataPack");
-        Log.d(c.getName());
-        DataPack dataPack = (DataPack)c.newInstance();
-        Log.d(dataPack.getBaseMessage());
-//        test();
+
+
+        test();
     }
 
     public static void test(){
-        String msg = "{'seq':1,'type':1,'baseMessage':{'from':'nima','roomId':'wocao','password':'nimei','ante':1000}}";
+        String msg = "{'classType':'CreateRoomRequest','baseMessage':{'from':'nima','sessionId':12345,'roomId':'wocao','password':'nimei','ante':1000}}";
         Router router = new Router();
         router.route(null,msg);
     }

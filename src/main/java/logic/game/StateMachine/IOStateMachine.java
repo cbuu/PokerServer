@@ -18,9 +18,17 @@ public class IOStateMachine {
         this.game = game;
     }
 
+    public IOState getCurState() {
+        return curState;
+    }
+
+    public IOState getPreState() {
+        return preState;
+    }
+
     public void start(){
         preState = null;
-        curState = new IOStateInit();
+        curState = new IOStateInit(game);
         curState.enter();
         curState.run();
     }

@@ -1,4 +1,4 @@
-package logic.message;
+package logic.message.request;
 
 import db.dao.DaoFactory;
 import db.dao.RoomDao;
@@ -11,11 +11,23 @@ import utils.Log;
 /**
  * Created by iori on 2017/3/17.
  */
-public class CreateRoomCommand extends BaseCommand implements ILogicTask {
+public class CreateRoomRequest extends BaseRequest implements ILogicTask {
 
     private String roomId;
     private String password;
     private int ante;
+
+    public void setRoomId(String roomId) {
+        this.roomId = roomId;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setAnte(int ante) {
+        this.ante = ante;
+    }
 
     public void run(ChannelHandlerContext ctx) {
 

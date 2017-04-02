@@ -15,9 +15,9 @@ public class TaskFactory {
         int TYPE_LOGIN = 4;
     }
 
-    private static final String PACKAGE_PREFIX = "logic.message.";
+    private static final String PACKAGE_PREFIX = "logic.message.request.";
 
-    public static ILogicTask createHandler(DataPack dataPack){
+    public static ILogicTask createTask(DataPack dataPack){
 
         ILogicTask task = null;
         String classType = dataPack.getClassType();

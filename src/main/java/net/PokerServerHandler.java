@@ -19,10 +19,9 @@ import java.util.Locale;
 
 public class PokerServerHandler extends SimpleChannelInboundHandler<WebSocketFrame> {
 
-    private Router router;
 
     public PokerServerHandler(){
-        router = new Router();
+
     }
 
     @Override
@@ -35,10 +34,16 @@ public class PokerServerHandler extends SimpleChannelInboundHandler<WebSocketFra
             String request = ((TextWebSocketFrame) frame).text();
             System.out.println(request);
 
-            router.route(ctx,request);
+            Router.route(ctx,request);
         } else {
             String message = "unsupported frame type: " + frame.getClass().getName();
             throw new UnsupportedOperationException(message);
         }
+    }
+
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        super.exceptionCaught(ctx, cause);
+        ctx.close();
     }
 }

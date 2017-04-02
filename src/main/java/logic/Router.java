@@ -16,9 +16,9 @@ public class Router {
 
     }
 
-    public void route(ChannelHandlerContext ctx,String json){
+    public static void route(ChannelHandlerContext ctx,String json){
         DataPack dataPack = JSON.parseObject(json, DataPack.class);
-        ILogicTask task = TaskFactory.createHandler(dataPack);
+        ILogicTask task = TaskFactory.createTask(dataPack);
         task.run(ctx);
     }
 }

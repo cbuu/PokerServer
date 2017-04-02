@@ -13,6 +13,14 @@ public class DataPack {
         return baseMessage;
     }
 
+    public void setClassType(String classType) {
+        this.classType = classType;
+    }
+
+    public void setBaseMessage(String baseMessage) {
+        this.baseMessage = baseMessage;
+    }
+
     private String classType;
     private String baseMessage;
 

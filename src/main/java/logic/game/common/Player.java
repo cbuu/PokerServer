@@ -5,7 +5,7 @@ package logic.game.common;
  */
 public class Player {
     private int currentMoney;
-
     private String username;
 
+    private
 }

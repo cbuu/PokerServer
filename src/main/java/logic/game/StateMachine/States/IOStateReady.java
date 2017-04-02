@@ -1,11 +1,16 @@
 package logic.game.StateMachine.States;
 
+import logic.game.Game;
 import logic.game.StateMachine.IOState;
 
 /**
  * Created by iori on 2017/4/2.
  */
 public class IOStateReady extends IOState {
+    public IOStateReady(Game game) {
+        super(game);
+    }
+
     public StateType getType() {
         return StateType.Ready;
     }
@@ -22,6 +27,6 @@ public class IOStateReady extends IOState {
 
 
 
-        return new IOStateStart();
+        return new IOStateStart(getGame());
     }
 }

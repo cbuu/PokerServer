@@ -3,6 +3,7 @@ package logic.game;
 import logic.game.StateMachine.IOStateMachine;
 import logic.game.common.Player;
 import logic.game.common.PokerGroup;
+import utils.GameConstant;
 
 import java.util.ArrayList;
 
@@ -10,8 +11,6 @@ import java.util.ArrayList;
  * Created by Administrator on 2017/3/31.
  */
 public class Game{
-
-    public static final int MAX_USER = 5;
 
     private String roomId;
 
@@ -39,7 +38,10 @@ public class Game{
     }
 
     public boolean addPlayer(Player player){
-
+        if (players.size() > GameConstant.MAX_USER){
+            return false;
+        }
+        players.add(player);
         return true;
     }
 }
