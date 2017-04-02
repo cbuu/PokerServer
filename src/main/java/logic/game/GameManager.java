@@ -21,4 +21,12 @@ public class GameManager {
     public void init(){
         gameMap = new HashMap<String, Game>();
     }
+
+    public Game createAndInitGame(String roomId){
+        Game game = new Game();
+        game.init(roomId);
+        gameMap.put(roomId,game);
+
+        return game;
+    }
 }

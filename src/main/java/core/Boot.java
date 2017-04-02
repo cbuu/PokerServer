@@ -1,20 +1,23 @@
 package core;
 
-import db.DBCore;
 import logic.Router;
-import logic.game.GameManager;
+import logic.message.DataPack;
+import utils.Log;
 
 /**
  * Created by iori on 2017/3/16.
  */
 public class Boot {
     public static void main(String[] args) throws Exception {
-        DBCore.getInstance().init();
-        GameManager.getInstance().init();
+//        DBCore.getInstance().init();
+//        GameManager.getInstance().init();
 //        PokerServer server = new PokerServer();
 //        server.start();
-
-        test();
+        Class c = Class.forName("logic.message.DataPack");
+        Log.d(c.getName());
+        DataPack dataPack = (DataPack)c.newInstance();
+        Log.d(dataPack.getBaseMessage());
+//        test();
     }
 
     public static void test(){

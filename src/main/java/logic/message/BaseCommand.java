@@ -1,13 +1,13 @@
-package message;
+package logic.message;
 
 /**
  * Created by iori on 2017/3/17.
  */
-public class BaseMessage {
+public class BaseCommand {
 
     private String from;
 
-    public BaseMessage(){}
+    public BaseCommand(){}
 
     public String getFrom() {
         return from;
