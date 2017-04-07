@@ -28,13 +28,15 @@ public class PokerServerHandler extends SimpleChannelInboundHandler<WebSocketFra
     protected void channelRead0(ChannelHandlerContext ctx, WebSocketFrame frame) throws Exception {
         // ping and pong frames already handled
 
+        ClientProxy proxy = new ClientProxy(ctx);
+
         if (frame instanceof TextWebSocketFrame) {
             // Send the uppercase string back.
 
             String request = ((TextWebSocketFrame) frame).text();
             System.out.println(request);
 
-            Router.route(ctx,request);
+            Router.route(proxy,request);
         } else {
             String message = "unsupported frame type: " + frame.getClass().getName();
             throw new UnsupportedOperationException(message);

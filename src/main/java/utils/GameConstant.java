@@ -7,4 +7,5 @@ public interface GameConstant {
     int USER_ORIGIN_MONEY = 1000;
 
     int MAX_USER = 5;
+    int MAX_POKER_NUM = 5;
 }

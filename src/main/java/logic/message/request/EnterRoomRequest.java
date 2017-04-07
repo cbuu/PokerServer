@@ -6,6 +6,7 @@ import db.model.Room;
 import io.netty.channel.ChannelHandlerContext;
 import logic.game.common.Player;
 import logic.task.ILogicTask;
+import net.ClientProxy;
 import utils.Log;
 
 /**
@@ -24,7 +25,7 @@ public class EnterRoomRequest extends BaseRequest implements ILogicTask {
     private String roomId;
     private String password;
 
-    public void run(ChannelHandlerContext ctx) {
+    public void run(ClientProxy proxy) {
 
         RoomDao roomDao = DaoFactory.createRoomDao();
         if (roomDao.hasRoom(roomId)) {

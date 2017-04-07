@@ -1,7 +1,10 @@
 package core;
 
+import db.DBCore;
 import logic.Router;
+import logic.game.GameManager;
 import logic.message.DataPack;
+import net.PokerServer;
 import utils.Log;
 
 /**
@@ -9,13 +12,11 @@ import utils.Log;
  */
 public class Boot {
     public static void main(String[] args) throws Exception {
-//        DBCore.getInstance().init();
-//        GameManager.getInstance().init();
-//        PokerServer server = new PokerServer();
-//        server.start();
-
-
-        test();
+        DBCore.getInstance().init();
+        GameManager.getInstance().init();
+        PokerServer server = new PokerServer();
+        server.start();
+//        test();
     }
 
     public static void test(){

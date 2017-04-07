@@ -5,6 +5,7 @@ import db.dao.UserDao;
 import db.model.User;
 import io.netty.channel.ChannelHandlerContext;
 import logic.task.ILogicTask;
+import net.ClientProxy;
 import utils.Log;
 import utils.SessionIdGen;
 
@@ -24,7 +25,7 @@ public class LoginRequest extends BaseRequest implements ILogicTask{
     private String username;
     private String password;
 
-    public void run(ChannelHandlerContext ctx) {
+    public void run(ClientProxy proxy) {
 
         UserDao userDao = DaoFactory.createUserDao();
         if (userDao.isRegistered(username)){

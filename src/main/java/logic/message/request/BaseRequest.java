@@ -7,8 +7,17 @@ public class BaseRequest {
 
     private String from;
     private long sessionId;
+    private int reqId;
 
     public BaseRequest(){}
+
+    public int getReqId() {
+        return reqId;
+    }
+
+    public void setReqId(int reqId) {
+        this.reqId = reqId;
+    }
 
     public String getFrom() {
         return from;

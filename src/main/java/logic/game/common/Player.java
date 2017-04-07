@@ -7,5 +7,4 @@ public class Player {
     private int currentMoney;
     private String username;
 
-    private
 }
